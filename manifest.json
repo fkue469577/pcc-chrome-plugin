@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "naotu-baidu-import-export",
+  "version": "0.0.1",
+  "description": "百度脑图的文件导入导出",
+  "icons": {
+    "16": "img/favicon.ico",
+    "48": "img/favicon.ico",
+    "128": "img/favicon.ico"
+  },
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "permissions": [
+    "declarativeContent",
+    "tabs",
+    "http://*/",
+    "https://*/"
+  ],
+  "content_scripts": [{
+    "matches": ["https://naotu.baidu.com/*"],
+    "js": [
+      "js/jquery-3.1.1.js",
+      "js/import-export.js"
+    ],
+    "css": [
+      "css/import-export.css"
+    ],
+    "all_frames": true
+  }]
+}
