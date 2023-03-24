@@ -9,7 +9,7 @@ var homeHtml = `<div class="import-export-container">
     <input type="file" style="display: none;" multiple="multiple" accept=".km" name="file" id="batchFile"/>
 </div>`;
 
-if(location.href.indexOf("file")>-1 && $(".import-export-container").length==0) {
+if(location.href.indexOf("https://naotu.baidu.com/file")>-1 && $(".import-export-container").length==0) {
     var body = $("body")
     body.prepend(fileHtml)
 
@@ -45,7 +45,7 @@ if(location.href.indexOf("file")>-1 && $(".import-export-container").length==0) 
     });
 }
 
-if(location.href.indexOf("home")>-1 && $(".import-export-container").length==0) {
+if(location.href.indexOf("https://naotu.baidu.com/home")>-1 && $(".import-export-container").length==0) {
     var body = $("body")
     body.prepend(homeHtml)
 
