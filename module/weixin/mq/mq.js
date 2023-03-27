@@ -32,18 +32,18 @@ $(document).on("mousewheel DOMMouseScroll", ".layui-layer-phimg", function (e) {
     var width = img.width;
     var height = img.height;
     if (delta > 0) {
-        if (h < (window.innerHeight)) {
-            h = h * 1.05;
-            w = w * 1.05;
-            width = width*1.05;
-            height = height*1.05;
-        }
+        // if (h < (window.innerHeight)) {
+        // }
+        h = h * 1.1;
+        w = w * 1.1;
+        width = width*1.1;
+        height = height*1.1;
     } else if (delta < 0) {
         if (h > 100) {
-            h = h * 0.95;
-            w = w * 0.95;
-            width = width*0.95;
-            height = height*0.95;
+            h = h * 0.9;
+            w = w * 0.9;
+            width = width*0.9;
+            height = height*0.9;
         }
     }
     imagep.css("top", (window.innerHeight - h) / 2);
