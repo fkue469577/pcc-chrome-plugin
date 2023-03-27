@@ -31,19 +31,20 @@ $(document).on("mousewheel DOMMouseScroll", ".layui-layer-phimg", function (e) {
     img.src = img_url;
     var width = img.width;
     var height = img.height;
+    var rate = 1.1;
     if (delta > 0) {
         // if (h < (window.innerHeight)) {
         // }
-        h = h * 1.1;
-        w = w * 1.1;
-        width = width*1.1;
-        height = height*1.1;
+        h = h * rate;
+        w = w * rate;
+        width = width*rate;
+        height = height*rate;
     } else if (delta < 0) {
         if (h > 100) {
-            h = h * 0.9;
-            w = w * 0.9;
-            width = width*0.9;
-            height = height*0.9;
+            h = h * (1-rate);
+            w = w * (1-rate);
+            width = width*(1-rate);
+            height = height*(1-rate);
         }
     }
     imagep.css("top", (window.innerHeight - h) / 2);
