@@ -1,5 +1,3 @@
-window._chrome = chrome;
-
 /*===============获取唯一id========================*/
 function uuid() {
     var s = [];

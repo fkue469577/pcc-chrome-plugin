@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "pcc plugin",
   "version": "0.0.1",
   "description": "个人的浏览器plugin",
@@ -9,13 +9,11 @@
     "128": "img/favicon.ico"
   },
   "background": {
-    "service_worker": "script/background.js"
+    "scripts": ["script/background.js"]
   },
   "permissions": [
     "declarativeContent",
-    "tabs"
-  ],
-  "host_permissions": [
+    "tabs",
     "http://*/",
     "https://*/"
   ],
