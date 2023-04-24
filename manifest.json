@@ -19,6 +19,12 @@
   ],
   "content_scripts": [
     {
+      "matches": ["<all_urls>"],
+      "js": [
+        "script/import.js"
+      ]
+    }
+    , {
       "matches": ["https://naotu.baidu.com/*"],
       "js": [
         "script/jquery-3.1.1.js",
@@ -28,15 +34,15 @@
         "module/naotu/import-export.css"
       ],
       "all_frames": true
-    },
-    {
+    }
+    , {
       "matches": ["http://localhost/*", "http://127.0.0.1/*", "http://192.168.1.33/*"],
       "js": [
         "script/jquery-3.1.1.js",
         "module/dev/autocomplete-username-and-password.js"
       ]
-    },
-    {
+    }
+    , {
       "matches":["https://mp.weixin.qq.com/*"],
       "js": [
         "script/jquery-3.1.1.js",
@@ -55,5 +61,18 @@
         "script/layui/css/modules/code.css"
       ]
     }
+    , {
+      "matches": ["https://accounts.google.com/*"],
+      "js": [
+        "script/jquery-3.1.1.js",
+        "module/google/accounts.google.js"
+      ]
+    }
+    , {
+      "matches": ["https://www.google.com/*"],
+      "js": [
+        "module/google/google.search.js"]
+    }
   ]
+//  , "web_accessible_resources": ["module/intercept/forward.js"]
 }
