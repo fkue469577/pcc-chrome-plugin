@@ -23,7 +23,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     console.log(request, sender, sendResponse);
     sendResponse('我是后台，我已收到你的消息：' + JSON.stringify(request));
     console.log("---------- background.js end ----------");
-    fetch("http://192.168.1.33:8778/daily/book/catchZHIHU", {
+    fetch("http://localhost:8778/daily/book/catchZHIHU", {
         method: "post",
         body: JSON.stringify(request),
         headers: {
