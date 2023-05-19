@@ -30,7 +30,7 @@
     },
     {
       "matches": [
-        "https://www.zhihu.com/*"
+        "https://www.zhihu.com/pub/reader/120332575/chapter/*"
       ],
       "js": [
         "module/zhihu/reader/catch.ebook.js"
