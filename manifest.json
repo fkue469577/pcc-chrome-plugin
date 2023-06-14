@@ -94,6 +94,17 @@
       "js": [
         "module/google/google.search.js"
       ]
+    },
+    {
+      "matches": [
+        "http://192.168.1.212:3000/*"
+      ],
+      "js": [
+        "script/jquery-3.1.1.js",
+        "module/dev/yapi.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
     }
   ],
   "web_accessible_resources": [
