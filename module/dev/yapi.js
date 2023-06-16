@@ -20,16 +20,23 @@ if(window.location.href.indexOf("/project/")>-1) {
                     }
                 }).then(()=>location.reload());
                 function collectionBody(parents) {
-                    return parents.find("a").map((i, item)=>{
+                    var sort = ['_init', '_tree', '_分页']
+                    return parents.find("a").map((index, item)=>{
                         var href = $(item).attr("href");
                         var hrefs = href.split("/");
                         var id = hrefs[hrefs.length-1];
-                        return {id: id, name: $(item).text()}
+                        var data = {id: id, name: $(item).text()}
+                        sort.forEach((e, i)=>data.name.indexOf(e)>-1? data["sort"]=i: null);
+                        return data
                     }).get().sort((a, b)=>{
                         var a_name = a.name.split("_")[0];
                         var b_name = b.name.split("_")[0];
                         if(a_name==b_name) {
-                            return parseInt(a.id)-parseInt(b.id);
+                            if(a.sort!=undefined || b.sort!=undefined) {
+                                return (a.sort??1000)-(b.sort??1000)
+                            } else {
+                                return parseInt(a.id)-parseInt(b.id);
+                            }
                         } else {
                             return a_name.localeCompare(b_name, 'zh-Hans-CN');
                         }
